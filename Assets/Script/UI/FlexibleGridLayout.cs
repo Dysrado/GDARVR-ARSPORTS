@@ -32,7 +32,7 @@ public class FlexibleGridLayout : LayoutGroup
     {
         base.CalculateLayoutInputHorizontal();
 
-        if( fitType == FitType.FixedRows || fitType == FitType.FixedColumn || fitType == FitType.Uniform)
+        if( fitType == FitType.Uniform)
         {
             fitX = true;
             fitY = true;
@@ -58,7 +58,7 @@ public class FlexibleGridLayout : LayoutGroup
         float parentWidth = rectTransform.rect.width;
         float parentHeight = rectTransform.rect.height;
 
-        float cellWidth = (parentWidth - padding.left - padding.right - spacing.x * (column - 1)) / (float)column;
+        float cellWidth = (parentWidth - padding.left - padding.right - spacing.x * (column - 1) ) / (float)column;
         float cellHeight = (parentHeight - padding.top - padding.bottom - spacing.y * (rows - 1)) / (float)rows;
 
         cellSize.x = fitX ? cellWidth: cellSize.x;
@@ -75,7 +75,7 @@ public class FlexibleGridLayout : LayoutGroup
             var item = rectChildren[i];
 
             var xPos = (cellSize.x * columnCount) + (spacing.x * columnCount) + padding.left;
-            var yPos = (cellSize.x * rowCount) + (spacing.y * rowCount) + padding.top; 
+            var yPos = (cellSize.y * rowCount) + (spacing.y * rowCount) + padding.top; 
 
             SetChildAlongAxis(item, 0, xPos, cellSize.x);
             SetChildAlongAxis(item, 1, yPos, cellSize.y);
