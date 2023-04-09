@@ -58,7 +58,7 @@ public class UIMainBehaviour : MonoBehaviour
     }
 
 
-    private void OnSelectedMainMenu()
+    public void OnSelectedMainMenu()
     {
         SceneManager.LoadScene(SceneSwitch.MAINMENU);
     }
