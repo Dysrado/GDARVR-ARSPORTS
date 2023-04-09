@@ -24,17 +24,39 @@ public class UIMainBehaviour : MonoBehaviour
 
 
     [Header("Required Reference")]
-    [SerializeField] private GameObject SelectionScreen;
-    [SerializeField] private GameObject OnSelectPlayerSettings;
+    [SerializeField] private GameObject selectionScreen;
+    [SerializeField] private GameObject selectPlayerSettings;
+    [SerializeField] private GameObject mainMenuScreen;
     [SerializeField] private ActiveGame TypeSection;
 
 
     //Required Attribute
     private ActiveGame SelectedGame = ActiveGame.None;
     private int playerCount = 2; //No of players competing with
-    
+    private GameObject activeScreen;
+
 
     //Scene Transition Function = Internals Calls
+
+    private void Start()
+    {
+        OnStartInitialization();
+ 
+    }
+
+
+    private void OnStartInitialization()
+    {
+        switch (TypeSection)
+        {
+            case ActiveGame.MainMenu:
+                activeScreen = mainMenuScreen;
+                break;
+
+            //Add more cases for different Games;
+        }
+    }
+
 
     private void OnSelectedMainMenu()
     {
@@ -51,27 +73,41 @@ public class UIMainBehaviour : MonoBehaviour
         SceneManager.LoadScene(SceneSwitch.ARCHERY);
     }
 
-    // UI Behaviour
+    // Handling Sports Select
+
+    public void OnQuit()
+    {
+        Application.Quit();
+        Debug.Log("Exitting the Game");
+    }
+
 
     public void OnSelectSports()
     {
-        SelectionScreen.SetActive(true);
+        selectionScreen.SetActive(true);
+        activeScreen.SetActive(false);
     }
 
     public void OnDeselectSports()
     {
-        SelectionScreen.SetActive(false);
+        selectionScreen.SetActive(false);
+        activeScreen.SetActive(true);
+
+        Debug.Log("Click Back");
     }
 
 
+    // Handling Choose Player
     public void OnSelectPlayer()
     {
-        OnSelectPlayerSettings.SetActive(true);
+        selectPlayerSettings.SetActive(true);
+        selectionScreen.SetActive(false);
     }
 
     public void OnDeselectPlayer()
     {
-        OnSelectPlayerSettings.SetActive(false);
+        selectPlayerSettings.SetActive(false);
+        selectionScreen.SetActive(true);
     }
 
     private void ConfirmGame()
@@ -100,11 +136,13 @@ public class UIMainBehaviour : MonoBehaviour
         public void ChooseBowling()
         {
             SelectedGame = ActiveGame.Bowling;
+            Debug.Log("Choosen Sport: Bowling");
         }
 
         public void ChooseArcher()
         {
             SelectedGame = ActiveGame.Archery;
+            Debug.Log("Choosen Sport: Archery");
         }
 
         //For Player Count
