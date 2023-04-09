@@ -55,6 +55,8 @@ public class BowlingUIBehaviour : MonoBehaviour
 
         activePlayerFrame = player1FrameHolder;
         activePlayerFrame.SetActive(true);
+
+        InitializeFrame();
     }
 
     private void InitializeFrame()
@@ -85,15 +87,17 @@ public class BowlingUIBehaviour : MonoBehaviour
                     Player1FrameList.Add(copyFrame);
 
                     GameObject totalFrame = GameObject.Instantiate(totalScoreReference);
-                    copyFrame.transform.SetParent(player1FrameHolder.transform);
+                    totalFrame.transform.SetParent(player1FrameHolder.transform);
                     Player1FrameList.Add(totalFrame);
+
+                    Debug.Log("Finished Building");
 
                 }
 
                 //Normal Spawn of the Frame
                 else
                 {
-                    GameObject copyFrame = GameObject.Instantiate(lastSetReference);
+                    GameObject copyFrame = GameObject.Instantiate(normalSetReference);
                     copyFrame.transform.SetParent(player1FrameHolder.transform);
                     copyFrame.GetComponent<BSetData>().DeclareSetCount(index + 1);
                     Player1FrameList.Add(copyFrame);
@@ -105,12 +109,12 @@ public class BowlingUIBehaviour : MonoBehaviour
                 if (index == maxSetSize - 1)
                 {
                     GameObject copyFrame = GameObject.Instantiate(lastSetReference);
-                    copyFrame.transform.SetParent(player1FrameHolder.transform);
+                    copyFrame.transform.SetParent(player2FrameHolder.transform);
                     copyFrame.GetComponent<BLastSetData>().DeclareSetCount(index + 1);
                     Player2FrameList.Add(copyFrame);
 
                     GameObject totalFrame = GameObject.Instantiate(totalScoreReference);
-                    copyFrame.transform.SetParent(player1FrameHolder.transform);
+                    totalFrame.transform.SetParent(player2FrameHolder.transform);
                     Player2FrameList.Add(totalFrame);
 
                 }
@@ -118,8 +122,8 @@ public class BowlingUIBehaviour : MonoBehaviour
                 //Normal Spawn of the Frame
                 else
                 {
-                    GameObject copyFrame = GameObject.Instantiate(lastSetReference);
-                    copyFrame.transform.SetParent(player1FrameHolder.transform);
+                    GameObject copyFrame = GameObject.Instantiate(normalSetReference);
+                    copyFrame.transform.SetParent(player2FrameHolder.transform);
                     copyFrame.GetComponent<BSetData>().DeclareSetCount(index + 1);
                     Player2FrameList.Add(copyFrame);
                 }
