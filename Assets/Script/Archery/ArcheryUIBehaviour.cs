@@ -12,6 +12,7 @@ public class ArcheryUIBehaviour : MonoBehaviour
         First = 0,
         Second = 1
     }
+    public static ArcheryUIBehaviour Instance;
 
 
     [Header("ArcheryData")]
@@ -30,7 +31,13 @@ public class ArcheryUIBehaviour : MonoBehaviour
     private bool isCountdownActive = false;
     protected int timeInSeconds = 0;
 
-
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     //Placeholder Function: If the develepor decide to customize the name.
     private void SetNames()

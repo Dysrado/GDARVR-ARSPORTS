@@ -8,20 +8,20 @@ public class ArrowPhysics : MonoBehaviour
 {
     private Rigidbody body;
     private Transform direction;
+    
     [SerializeField] private float power = 30;
+    ArcheryScoring score;
     //Place instance here
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();
         body.AddForce(transform.up * power, ForceMode.Impulse);
+        score = ArcheryScoring.Instance;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 
     public void SetDirection(Transform transform)
     {
@@ -31,12 +31,18 @@ public class ArrowPhysics : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Target"))
         {
-            float distance = Mathf.Abs(Vector3.Distance(this.gameObject.transform.position, collision.gameObject.transform.position));
+            
             Debug.Log("Target");
+            score.ReceiveArrowLoc(this.transform.position);
+
+            Destroy(this.gameObject);
+
             //UI.Instance.AddScore(distance)
         }
         else if (collision.gameObject.CompareTag("Ground"))
         {
+            
+            score.ReceiveArrowLoc(new Vector3(1000,1000,1000));
             //UI.Instance.AddScore(-1)
             Debug.Log("Ground");
 
