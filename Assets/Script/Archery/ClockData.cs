@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Runtime.InteropServices;
 
 public class ClockData : MonoBehaviour
 {
@@ -20,8 +21,8 @@ public class ClockData : MonoBehaviour
         int largeSeconds = seconds % 60;
         int smallSeconds = largeSeconds % 10;
         
-        if (largeSeconds < 10)
-            timerData.text = "00:0" + largeSeconds.ToString(); 
+        if (largeSeconds < 10 && minutes != 0)
+            timerData.text = "0" + minutes.ToString() + ":0" + largeSeconds.ToString(); 
 
         else if (minutes == 0)
             timerData.text = "00:" + largeSeconds.ToString();
