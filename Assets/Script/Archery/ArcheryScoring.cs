@@ -45,7 +45,8 @@ public class ArcheryScoring : MonoBehaviour
         }
         ui = ArcheryUIBehaviour.Instance;
         shooting = FindObjectOfType<ArcheryShooting>();
-        StartTimer();
+        currentPlayer = -1;
+        panel.SetActive(true);
     }
 
     
@@ -148,8 +149,9 @@ public class ArcheryScoring : MonoBehaviour
             currentPlayer = 0;
             playerScores[0] = 0;
             playerScores[1] = 0;
-            ui.UpdateSetScore(ArcheryUIBehaviour.Player.First, playerSets[0]);
-            ui.UpdateSetScore(ArcheryUIBehaviour.Player.Second, playerSets[1]);
+            ui.UpdatePlayerScore(ArcheryUIBehaviour.Player.First, playerScores[0]);
+            ui.UpdatePlayerScore(ArcheryUIBehaviour.Player.Second, playerScores[1]);
+
         }
         arrowsShot = 0;
         StartTimer();
