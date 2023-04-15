@@ -14,7 +14,7 @@ public class ArrowPhysics : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody>();
-        body.AddForce(-transform.forward * power, ForceMode.Impulse);
+        body.AddForce(transform.up * power, ForceMode.Impulse);
     }
 
     // Update is called once per frame
