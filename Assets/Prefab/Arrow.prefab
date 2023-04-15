@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8198986651941191118}
   - component: {fileID: 7711372465239739589}
   - component: {fileID: 4358272315125189971}
-  - component: {fileID: 2771696505184823448}
+  - component: {fileID: 946868346443595901}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 30
+  testpoint: {fileID: 6930868558282113368, guid: 4b3db6d2acc89f74ab922cf023e858ad, type: 3}
 --- !u!54 &4358272315125189971
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -64,8 +65,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &2771696505184823448
-SphereCollider:
+--- !u!136 &946868346443595901
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -74,9 +75,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.27
-  m_Center: {x: 0, y: -0.19, z: 0}
+  m_Radius: 0.002
+  m_Height: 0.01
+  m_Direction: 1
+  m_Center: {x: -0.003, y: 0.1, z: -0.003}
 --- !u!1 &4298519141724463419
 GameObject:
   m_ObjectHideFlags: 0

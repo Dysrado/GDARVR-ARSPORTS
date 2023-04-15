@@ -10,6 +10,7 @@ public class ArrowPhysics : MonoBehaviour
     private Transform direction;
     
     [SerializeField] private float power = 30;
+    [SerializeField] GameObject testpoint;
     ArcheryScoring score;
     //Place instance here
     // Start is called before the first frame update
@@ -33,6 +34,7 @@ public class ArrowPhysics : MonoBehaviour
         {
             
             Debug.Log("Target");
+            GameObject obj = Instantiate(testpoint, collision.contacts[0].point, transform.rotation);
             score.ReceiveArrowLoc(collision.contacts[0].point);
             body.useGravity = false;
             body.velocity = Vector3.zero;

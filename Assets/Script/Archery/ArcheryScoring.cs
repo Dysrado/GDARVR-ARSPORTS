@@ -14,7 +14,7 @@ public class ArcheryScoring : MonoBehaviour
     float p7 = 0.35f;
     float p8 = 0.4f;
     float p9 = 0.45f;
-    float p10 = 0.50f;//Farthest from Middle
+    float p10 = 0.70f;//Farthest from Middle
     [SerializeField] GameObject center;
     public static ArcheryScoring Instance;
     ArcheryUIBehaviour ui;
@@ -30,7 +30,9 @@ public class ArcheryScoring : MonoBehaviour
 
     public void ReceiveArrowLoc(Vector3 arrow)
     {
-        float distance = Mathf.Abs(Vector3.Distance(center.transform.position, arrow));
+        Vector2 c = new Vector2 (center.transform.position.x, center.transform.position.y);
+        Vector2 a = new Vector2 (arrow.x, arrow.y);
+        float distance = Mathf.Abs(Vector2.Distance(a,c));
         if (distance <= p10 && distance > p9)
         {
             //you get 1 points
