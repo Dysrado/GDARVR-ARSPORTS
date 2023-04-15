@@ -34,8 +34,13 @@ public class ArrowPhysics : MonoBehaviour
             
             Debug.Log("Target");
             score.ReceiveArrowLoc(this.transform.position);
+            body.useGravity = false;
+            body.velocity = Vector3.zero;
+            Collider collider = GetComponent<Collider>();
+            collider.enabled = false;
+            body.freezeRotation = true;
 
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
 
             //UI.Instance.AddScore(distance)
         }

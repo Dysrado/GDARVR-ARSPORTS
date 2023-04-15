@@ -10,6 +10,7 @@ public class ArcheryShooting : MonoBehaviour
     [SerializeField] GameObject offset;
     [SerializeField] bool GameStart = false;
     [SerializeField] bool SetStart = false;
+    [SerializeField] Transform parent;
 
     private int ShotsFired = 0;
 
@@ -31,7 +32,7 @@ public class ArcheryShooting : MonoBehaviour
     {
         if (GameStart == true && SetStart == true)
         {
-            GameObject arrow = Instantiate(ArrowPrefab, offset.transform.position, offset.transform.rotation, transform);
+            GameObject arrow = Instantiate(ArrowPrefab, offset.transform.position, offset.transform.rotation, parent);
             ShotsFired++;
         }
     }

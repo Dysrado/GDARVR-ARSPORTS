@@ -76,6 +76,8 @@ public class ArcheryScoring : MonoBehaviour
             //you get 0 points
         }
 
+        Debug.Log("Distance: " + distance);
+
     }
     // Update is called once per frame
     void Update()

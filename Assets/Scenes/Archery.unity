@@ -147,13 +147,68 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38368933}
   m_LocalRotation: {x: -0.0029097495, y: -0.0003084512, z: 0.035137746, w: 0.9993782}
-  m_LocalPosition: {x: 0.000099998724, y: -0.0021999495, z: 0.00000008783171}
+  m_LocalPosition: {x: 0.0003, y: -0.003, z: -0.0258}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1942159128}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.332, y: -0.047, z: 4.027}
+--- !u!1 &275170774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 275170776}
+  - component: {fileID: 275170775}
+  m_Layer: 0
+  m_Name: ArcheryScoringHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &275170775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275170774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca25cf78e99f15848b5532f6bc9e0d51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p1: 0
+  p2: 0
+  p3: 0
+  p4: 0
+  p5: 0
+  p6: 0
+  p7: 0
+  p8: 0
+  p9: 0
+  p10: 0
+  center: {fileID: 38368933}
+--- !u!4 &275170776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275170774}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1123458, y: 0.64190716, z: 6.869686}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &276217214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6693853571837370867, guid: 33b64e4804b3d0f42ae4c754dd204a2a, type: 3}
@@ -778,6 +833,7 @@ MonoBehaviour:
   offset: {fileID: 1128835555}
   GameStart: 0
   SetStart: 0
+  parent: {fileID: 4544663276392498781}
 --- !u!224 &1305669660 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3804329500037310352, guid: 2a425d637c3eb1d47aaa119e89ed1ae1, type: 3}
@@ -910,6 +966,14 @@ PrefabInstance:
     - target: {fileID: 4544663275729278982, guid: b5694b4f1f719ef4185510047d4bba5e, type: 3}
       propertyPath: m_LocalScale.z
       value: 4.897818
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544663275729278982, guid: b5694b4f1f719ef4185510047d4bba5e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.095
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544663275729278982, guid: b5694b4f1f719ef4185510047d4bba5e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.063
       objectReference: {fileID: 0}
     - target: {fileID: 4544663276577111797, guid: b5694b4f1f719ef4185510047d4bba5e, type: 3}
       propertyPath: m_LocalScale.x
@@ -3219,6 +3283,11 @@ MonoBehaviour:
   m_Script: {fileID: 697333272, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &4544663276392498781 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4544663274975939749, guid: b5694b4f1f719ef4185510047d4bba5e, type: 3}
+  m_PrefabInstance: {fileID: 1435962104}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &4630184116247990650
 MeshRenderer:
   m_ObjectHideFlags: 0
