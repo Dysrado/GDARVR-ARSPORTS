@@ -31,7 +31,7 @@ public class ArcheryShooting : MonoBehaviour
     {
         if (GameStart == true && SetStart == true && ShotsFired < 5)
         {
-            GameObject arrow = Instantiate(ArrowPrefab, offset.transform.position, offset.transform.rotation);
+            GameObject arrow = Instantiate(ArrowPrefab, offset.transform.position, offset.transform.rotation, transform);
             ShotsFired++;
         }
     }
