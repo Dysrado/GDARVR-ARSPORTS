@@ -12,8 +12,6 @@ public class ArcheryShooting : MonoBehaviour
     [SerializeField] bool SetStart = false;
     [SerializeField] Transform parent;
 
-    private int ShotsFired = 0;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +31,6 @@ public class ArcheryShooting : MonoBehaviour
         if (GameStart == true && SetStart == true)
         {
             GameObject arrow = Instantiate(ArrowPrefab, offset.transform.position, offset.transform.rotation, parent);
-            ShotsFired++;
         }
     }
 }

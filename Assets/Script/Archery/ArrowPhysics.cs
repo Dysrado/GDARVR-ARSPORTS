@@ -34,7 +34,6 @@ public class ArrowPhysics : MonoBehaviour
         {
             body.AddForce(-transform.right * direction * windPower, ForceMode.Force);
         }
-
     }
 
     // Update is called once per frame
