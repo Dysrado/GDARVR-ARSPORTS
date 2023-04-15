@@ -8,15 +8,13 @@ public class ArrowPhysics : MonoBehaviour
 {
     private Rigidbody body;
     private Transform direction;
-    private float power = 30;
-    private SphereCollider collider;
+    [SerializeField] private float power = 30;
     //Place instance here
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();
         body.AddForce(transform.forward * power, ForceMode.Impulse);
-        collider = GetComponent<SphereCollider>();
     }
 
     // Update is called once per frame
