@@ -33,7 +33,7 @@ public class ArrowPhysics : MonoBehaviour
         {
             
             Debug.Log("Target");
-            score.ReceiveArrowLoc(this.transform.position);
+            score.ReceiveArrowLoc(collision.contacts[0].point);
             body.useGravity = false;
             body.velocity = Vector3.zero;
             Collider collider = GetComponent<Collider>();
