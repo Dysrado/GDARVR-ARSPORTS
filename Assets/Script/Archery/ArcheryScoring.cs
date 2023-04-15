@@ -42,13 +42,18 @@ public class ArcheryScoring : MonoBehaviour
         {
             Instance = this;
         }
-        ui = ArcheryUIBehaviour.Instance;
+       
         shooting = FindObjectOfType<ArcheryShooting>();
         currentPlayer = -1;
         panel.SetActive(true);
     }
 
-    
+    private void Start()
+    {
+        ui = ArcheryUIBehaviour.Instance;
+    }
+
+
     public void StartTimer()
     {
         SetStart = true;
@@ -145,6 +150,7 @@ public class ArcheryScoring : MonoBehaviour
         currentPlayer++;
         if (currentPlayer > 1)
         {
+            CheckSet();
             currentPlayer = 0;
             playerScores[0] = 0;
             playerScores[1] = 0;

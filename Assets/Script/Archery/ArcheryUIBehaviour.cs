@@ -37,6 +37,11 @@ public class ArcheryUIBehaviour : MonoBehaviour
         {
             Instance = this;
         }
+
+        else
+        {
+            Destroy(this);
+        }
     }
 
     //Placeholder Function: If the develepor decide to customize the name.
