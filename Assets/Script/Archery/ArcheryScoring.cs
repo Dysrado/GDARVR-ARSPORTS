@@ -14,6 +14,7 @@ public class ArcheryScoring : MonoBehaviour
     [SerializeField] GameObject center;
     public static ArcheryScoring Instance;
     ArcheryUIBehaviour ui;
+
     // Start is called before the first frame update
     void Awake()
     {
