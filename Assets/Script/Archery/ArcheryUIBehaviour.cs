@@ -54,7 +54,7 @@ public class ArcheryUIBehaviour : MonoBehaviour
     }
 
     
-    //Vuforia Detectiions
+    //Vuforia Detections
     public void NoImageTargetFound()
     {
         warningTab.SetActive(true);
@@ -81,7 +81,7 @@ public class ArcheryUIBehaviour : MonoBehaviour
         isCountdownActive = false;
     }
 
-    public void GetTime(int seconds)
+    public void SetTime(int seconds)
     {
         timeInSeconds = seconds;
     }
@@ -112,7 +112,7 @@ public class ArcheryUIBehaviour : MonoBehaviour
                     break;
 
                 case 2:
-                    player1Data.TickSecondtSet();
+                    player1Data.TickSecondSet();
                     break;
 
                 default:
@@ -132,7 +132,7 @@ public class ArcheryUIBehaviour : MonoBehaviour
                     break;
 
                 case 2:
-                    player2Data.TickSecondtSet();
+                    player2Data.TickSecondSet();
                     break;
 
                 default:

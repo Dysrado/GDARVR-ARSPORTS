@@ -14,18 +14,21 @@ public class ClockData : MonoBehaviour
         roundNum.text = "Round: " + count.ToString(); // replace the "Round: " with Description after defining properly;
     }
 
-    public void SetTimerData (int seconds)
+    public void SetTimerData (int seconds)//seconds 11
     {
         int minutes = seconds / 60;
         int largeSeconds = seconds % 60;
         int smallSeconds = largeSeconds % 10;
         
+        if (largeSeconds < 10)
+            timerData.text = "00:0" + largeSeconds.ToString(); 
 
-        if (minutes == 0)
-            timerData.text = "00:" + largeSeconds.ToString() + smallSeconds.ToString();
+        else if (minutes == 0)
+            timerData.text = "00:" + largeSeconds.ToString();
 
         else
-            timerData.text =  "0" + minutes.ToString() + ":" + largeSeconds.ToString() + smallSeconds.ToString();
+            timerData.text =  "0" + minutes.ToString() + ":" + largeSeconds.ToString();
+
     }
 
     public void ResetTimer()

@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
+
 
 public class ArcheryScoring : MonoBehaviour
 {
     public static ArcheryScoring Instance;
     ArcheryShooting shooting;
+    
 
     float p1 = 0.09868f; //inbetween inner and outer y   //Closest to middle
    float p2 = 0.1965f; //line of y and inner r
@@ -17,22 +20,59 @@ public class ArcheryScoring : MonoBehaviour
     [SerializeField] GameObject center;
     ArcheryUIBehaviour ui;
     [SerializeField] int[] playerScores;
+    
     [SerializeField] int currentPlayer = 0;
+    [SerializeField] int[] playerSets;
+    [SerializeField] int sets = 0;
 
     [SerializeField] int maxArrowsShot = 5;
+    [SerializeField] GameObject panel;
+    WindpressureHandler windpressureHandler;
+    private float startTicks = 210f;
+    private float ticks = 0;
 
     int arrowsShot = 0;
+
+    private bool SetStart = false;
 
     // Start is called before the first frame update
     void Awake()
     {
+        windpressureHandler = WindpressureHandler.Instance;
         if (Instance == null)
         {
             Instance = this;
         }
         ui = ArcheryUIBehaviour.Instance;
         shooting = FindObjectOfType<ArcheryShooting>();
+        StartTimer();
     }
+
+    
+    public void StartTimer()
+    {
+        SetStart = true;
+        ticks = startTicks;
+        ui.ActivateTimer();
+    }
+
+    public float GetTicks()
+    {
+        return ticks;
+    }
+    public int GetWindPressure()
+    {
+       return windpressureHandler.GetDirection();
+    }
+
+    public int GetCurrentPlayer()
+    {
+        return currentPlayer;
+    }
+
+    
+
+
 
     public void ReceiveArrowLoc(Vector3 arrow)
     {
@@ -80,26 +120,105 @@ public class ArcheryScoring : MonoBehaviour
 
         Debug.Log("Distance: " + distance);
 
-        arrowsShot++;
+     
         playerScores[currentPlayer] += outputScore;
 
-        if (arrowsShot >= maxArrowsShot)
+        switch (currentPlayer)
         {
-            // =============================================================== Change player UI
-            currentPlayer++;
-            if (currentPlayer > 1)
-            {
-                currentPlayer = 0;
-            }
-            arrowsShot = 0;
-        }
+            case 0:
+                ui.UpdatePlayerScore(ArcheryUIBehaviour.Player.First, playerScores[currentPlayer]);
+                break;
+            case 1:
+                ui.UpdatePlayerScore(ArcheryUIBehaviour.Player.Second, playerScores[currentPlayer]);
+                break;
+        }        
     }
 
 
+    public void IncrementShot()
+    {
+        arrowsShot++;
+    }
+    public void NextPlayer()
+    {
+        panel.SetActive(false);
+        currentPlayer++;
+        if (currentPlayer > 1)
+        {
+            currentPlayer = 0;
+            playerScores[0] = 0;
+            playerScores[1] = 0;
+            ui.UpdateSetScore(ArcheryUIBehaviour.Player.First, playerSets[0]);
+            ui.UpdateSetScore(ArcheryUIBehaviour.Player.Second, playerSets[1]);
+        }
+        arrowsShot = 0;
+        StartTimer();
+        
+        
+        //Delete all arrows just in case
+        //reset timer
+    }
+
+
+    public int GetArrowsShot()
+    {
+        return arrowsShot;
+    }
     // Update is called once per frame
     void Update()
     {
-        
+        if (arrowsShot >= maxArrowsShot || (ticks <= 0 && SetStart))
+        {
+            // =============================================================== Change player UI
+            panel.SetActive(true);
+            SetStart = false;
+            ui.ActivateTimer();
+            
+        }
+
+        if (SetStart == true)
+        {
+            ticks -= Time.deltaTime;
+            //UpdateTimer UI
+            ui.SetTime((int)ticks);
+        }
+    }
+
+    public void CheckSet()
+    {
+        if (playerScores[0] > playerScores[1])
+        {
+            //Player 1 wins the set
+            playerSets[0]++;
+            if (playerSets[0] <= 2)
+            {
+            ui.UpdateSetScore(ArcheryUIBehaviour.Player.First, playerSets[0]);
+            }
+            if (playerSets[0] == 3)
+            {
+                ui.EndGame(ArcheryUIBehaviour.Player.First);
+            }
+            sets++;
+
+        }
+
+        else if (playerScores[0] < playerScores[1])
+        {
+            playerSets[1]++;
+            if (playerSets[1] <= 2) { 
+                ui.UpdateSetScore(ArcheryUIBehaviour.Player.Second, playerSets[1]);
+            }
+            sets++;
+            if (playerSets[1] == 3)
+            {
+                ui.EndGame(ArcheryUIBehaviour.Player.Second);
+            }
+
+            //player 2 wins the set
+        }
+
+
+       
     }
 
 }

@@ -16,6 +16,7 @@ public class ArcheryPlayerData : MonoBehaviour
     [SerializeField] private Sprite defaultSetReference;
     [SerializeField] private Sprite wonSetReference;
 
+ 
     private Color defaultColor;
 
     private void Start()
@@ -24,6 +25,7 @@ public class ArcheryPlayerData : MonoBehaviour
     }
 
 
+   
 
     //Setter Attribute
     public void SetName(string name)
@@ -41,7 +43,7 @@ public class ArcheryPlayerData : MonoBehaviour
         firstSetImage.sprite = wonSetReference;
     }
 
-    public void TickSecondtSet()
+    public void TickSecondSet()
     {
         secondSetImage.sprite = wonSetReference;
     }
