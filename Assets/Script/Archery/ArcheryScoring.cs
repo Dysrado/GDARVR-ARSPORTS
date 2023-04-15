@@ -31,7 +31,7 @@ public class ArcheryScoring : MonoBehaviour
      int Distance = 3;
     WindpressureHandler windpressureHandler;
 
-    [SerializeField] bool GameSetup = true;
+    bool GameSetup = false;
     private float startTicks = 210f;
     private float ticks = 0;
 
