@@ -34,11 +34,14 @@ public class ArrowPhysics : MonoBehaviour
         if (collision.gameObject.CompareTag("Target"))
         {
             float distance = Mathf.Abs(Vector3.Distance(this.gameObject.transform.position, collision.gameObject.transform.position));
+            Debug.Log("Target");
             //UI.Instance.AddScore(distance)
         }
         else if (collision.gameObject.CompareTag("Ground"))
         {
             //UI.Instance.AddScore(-1)
+            Debug.Log("Ground");
+
             Destroy(this.gameObject);
         }
     }
