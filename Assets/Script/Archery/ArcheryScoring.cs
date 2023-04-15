@@ -17,6 +17,8 @@ public class ArcheryScoring : MonoBehaviour
     float p5 = 0.4925f;
     
     [SerializeField] GameObject center;
+    [SerializeField] GameObject Bow;
+    [SerializeField] GameObject WarningPanel;
     ArcheryUIBehaviour ui;
     [SerializeField] int[] playerScores;
     
@@ -26,7 +28,10 @@ public class ArcheryScoring : MonoBehaviour
 
     [SerializeField] int maxArrowsShot = 5;
     [SerializeField] GameObject panel;
+     int Distance = 3;
     WindpressureHandler windpressureHandler;
+
+    [SerializeField] bool GameSetup = true;
     private float startTicks = 210f;
     private float ticks = 0;
 
@@ -45,7 +50,6 @@ public class ArcheryScoring : MonoBehaviour
        
         shooting = FindObjectOfType<ArcheryShooting>();
         currentPlayer = -1;
-        panel.SetActive(true);
     }
 
     private void Start()
@@ -189,6 +193,41 @@ public class ArcheryScoring : MonoBehaviour
             //UpdateTimer UI
             ui.SetTime((int)ticks);
         }
+
+
+        if (GameSetup == true)
+        {
+            float far = Vector3.Distance(GameObject.FindGameObjectWithTag("Target").transform.position, Bow.transform.position);
+            if (far < Distance) //Too Close
+            {
+                WarningPanel.SetActive(true);   
+            }
+            else
+            {
+                WarningPanel.SetActive(false);
+            }
+
+        }
+        
+    }
+
+    public bool CanFire()
+    {
+        float far = Vector3.Distance(GameObject.FindGameObjectWithTag("Target").transform.position, Bow.transform.position);
+        if (far < Distance) //Too Close
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    public void SetupGame()
+    {
+        GameSetup = true;
+        panel.SetActive(true);
     }
 
     public void CheckSet()
