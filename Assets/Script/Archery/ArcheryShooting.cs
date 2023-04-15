@@ -29,7 +29,7 @@ public class ArcheryShooting : MonoBehaviour
 
     public void FireArrow()
     {
-        if (GameStart == true && SetStart == true && ShotsFired < 5)
+        if (GameStart == true && SetStart == true)
         {
             GameObject arrow = Instantiate(ArrowPrefab, offset.transform.position, offset.transform.rotation, transform);
             ShotsFired++;
