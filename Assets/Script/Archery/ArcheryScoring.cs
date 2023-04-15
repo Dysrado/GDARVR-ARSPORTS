@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class ArcheryScoring : MonoBehaviour
 {
-    float p1 = 0.05f;    //Closest to middle
-    float p2 = 0.10f;
-    float p3 = 0.15f;
-    float p4 = 0.20f;
-    float p5 = 0.25f;
-    float p6 = 0.30f;
-    float p7 = 0.35f;
-    float p8 = 0.4f;
-    float p9 = 0.45f;
-    float p10 = 0.70f;//Farthest from Middle
+    float p1 = 0.018f; //inbetween inner and outer y   //Closest to middle
+   float p2 = 0.045f; //line of y and inner r
+    float p3 = 0.060f;
+    float p4 = 0.086f;
+    float p5 = 0.125f;
+    float p6 = 0.145f;
+    float p7 = 0.160f;
+    float p8 = 0.182f;
+    float p9 = 0.217f;
+    float p10 = 0.6f;//Farthest from Middle
     [SerializeField] GameObject center;
     public static ArcheryScoring Instance;
     ArcheryUIBehaviour ui;
