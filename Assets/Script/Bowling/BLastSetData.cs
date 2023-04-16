@@ -31,7 +31,7 @@ public class BLastSetData : MonoBehaviour
 
     public void UpdateThirdHit(string score)
     {
-        secondHitScore.text = score;
+        thirdHitScore.text = score;
     }
 
     public void UpdateCumultativeScore(string score)
