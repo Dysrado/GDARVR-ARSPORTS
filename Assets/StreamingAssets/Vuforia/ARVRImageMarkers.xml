@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="rounded-rocks-texture" size="1.000000 0.750000" />
+    <ImageTarget name="craggy-wall" size="1.000000 0.668945" />
+    <ImageTarget name="dlsu-logo" size="1.000000 1.014955" />
+  </Tracking>
+</QCARConfig>

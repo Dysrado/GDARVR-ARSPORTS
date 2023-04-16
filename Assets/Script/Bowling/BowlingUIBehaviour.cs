@@ -140,14 +140,14 @@ public class BowlingUIBehaviour : MonoBehaviour
             List<int> next2Values = new List<int>();
             next2Values = CheckNext2ValueIndexesForStrike(P1CumulativeScore, 12);
             P1CumulativeScore[16] = P1CumulativeScore[15] + P1CumulativeScore[next2Values[0]] + P1CumulativeScore[next2Values[1]];
-            Player1FrameList[5].GetComponent<BSetData>().UpdateCumultativeScore(P1CumulativeScore[16].ToString());
+            Player1FrameList[4].GetComponent<BLastSetData>().UpdateCumultativeScore(P1CumulativeScore[16].ToString());
         }
         if (P1CumulativeScore[12] == 10)
         {
             List<int> next2Values = new List<int>();
             next2Values = CheckNext2ValueIndexesForStrike(P1CumulativeScore, 12);
             P1CumulativeScore[15] = P1CumulativeScore[11] + P1CumulativeScore[12] + P1CumulativeScore[next2Values[0]] + P1CumulativeScore[next2Values[1]];
-            Player1FrameList[4].GetComponent<BSetData>().UpdateCumultativeScore(P1CumulativeScore[15].ToString());
+            Player1FrameList[4].GetComponent<BLastSetData>().UpdateCumultativeScore(P1CumulativeScore[15].ToString());
         }
         if (P1CumulativeScore[9] == 10)
         {
@@ -296,21 +296,21 @@ public class BowlingUIBehaviour : MonoBehaviour
                 Debug.Log("P1 Current FRAME: " + currentFrame);
                 P1CumulativeScore[P1CurrentCumulativeIndex] = cumulativeScore;
                 P1CumulativeScore[15] = P1CumulativeScore[2] + P1CumulativeScore[5] + P1CumulativeScore[8] + P1CumulativeScore[11] + P1CumulativeScore[12];
-                CopyFrameList[currentFrame].GetComponent<BSetData>().UpdateCumultativeScore(P1CumulativeScore[15].ToString());
-                P1CurrentCumulativeIndex ++;
+                CopyFrameList[currentFrame].GetComponent<BLastSetData>().UpdateCumultativeScore(P1CumulativeScore[15].ToString());
+                P1CurrentCumulativeIndex++;
             }
             else if (P1CurrentCumulativeIndex == 13)
             {
                 P1CumulativeScore[P1CurrentCumulativeIndex] = cumulativeScore;
                 P1CumulativeScore[15] = P1CumulativeScore[2] + P1CumulativeScore[5] + P1CumulativeScore[8] + P1CumulativeScore[11] + P1CumulativeScore[12] + P1CumulativeScore[13];
-                CopyFrameList[currentFrame].GetComponent<BSetData>().UpdateCumultativeScore(P1CumulativeScore[15].ToString());
+                CopyFrameList[currentFrame].GetComponent<BLastSetData>().UpdateCumultativeScore(P1CumulativeScore[15].ToString());
                 P1CurrentCumulativeIndex++;
             }
             else if (P1CurrentCumulativeIndex == 14)
             {
                 P1CumulativeScore[P1CurrentCumulativeIndex] = cumulativeScore;
                 P1CumulativeScore[15] = P1CumulativeScore[2] + P1CumulativeScore[5] + P1CumulativeScore[8] + P1CumulativeScore[11] + P1CumulativeScore[12] + P1CumulativeScore[13] + P1CumulativeScore[14];
-                CopyFrameList[currentFrame].GetComponent<BSetData>().UpdateCumultativeScore(P1CumulativeScore[15].ToString());
+                CopyFrameList[currentFrame].GetComponent<BLastSetData>().UpdateCumultativeScore(P1CumulativeScore[15].ToString());
                 P1CurrentCumulativeIndex += 2;
             }
             else // essentially for 1st attempts
@@ -710,8 +710,6 @@ public class BowlingUIBehaviour : MonoBehaviour
 
         if (frameIndex + 1 == maxSetSize)
         {
-            Debug.Log("In Third HIT");
-
             switch (attemptNum)
             {
                 case 1:
