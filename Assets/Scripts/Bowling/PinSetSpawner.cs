@@ -18,13 +18,13 @@ public class PinSetSpawner : MonoBehaviour
         // Reset Pins
         if (Input.GetKeyDown(KeyCode.R))
         {
-            GameObject.Instantiate(pinSet);
+            GameObject.Instantiate(pinSet, this.gameObject.transform);
         }
     }
 
     public void SpawnPins()
     {
-        GameObject.Instantiate(pinSet);
+        GameObject.Instantiate(pinSet, this.gameObject.transform);
     }
 
 }

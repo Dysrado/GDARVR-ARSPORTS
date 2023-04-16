@@ -150,6 +150,7 @@ public class UIMainBehaviour : MonoBehaviour
         public void OnPlayerSelectTwo()
         {
             playerCount = 2;
+            ConfirmGame();
         }
 
         public void OnPlayerSelectThree()

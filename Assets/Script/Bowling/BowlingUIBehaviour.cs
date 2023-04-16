@@ -747,10 +747,12 @@ public class BowlingUIBehaviour : MonoBehaviour
                     GameObject copyFrame = GameObject.Instantiate(lastSetReference);
                     copyFrame.transform.SetParent(player1FrameHolder.transform);
                     copyFrame.GetComponent<BLastSetData>().DeclareSetCount(index + 1);
+                    copyFrame.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
                     Player1FrameList.Add(copyFrame);
 
                     GameObject totalFrame = GameObject.Instantiate(totalScoreReference);
                     totalFrame.transform.SetParent(player1FrameHolder.transform);
+                    totalFrame.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
                     Player1FrameList.Add(totalFrame);
 
                     Debug.Log("Finished Building");
@@ -763,6 +765,7 @@ public class BowlingUIBehaviour : MonoBehaviour
                     GameObject copyFrame = GameObject.Instantiate(normalSetReference);
                     copyFrame.transform.SetParent(player1FrameHolder.transform);
                     copyFrame.GetComponent<BSetData>().DeclareSetCount(index + 1);
+                    copyFrame.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
                     Player1FrameList.Add(copyFrame);
                 }
                 break;
@@ -774,10 +777,12 @@ public class BowlingUIBehaviour : MonoBehaviour
                     GameObject copyFrame = GameObject.Instantiate(lastSetReference);
                     copyFrame.transform.SetParent(player2FrameHolder.transform);
                     copyFrame.GetComponent<BLastSetData>().DeclareSetCount(index + 1);
+                    copyFrame.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
                     Player2FrameList.Add(copyFrame);
 
                     GameObject totalFrame = GameObject.Instantiate(totalScoreReference);
                     totalFrame.transform.SetParent(player2FrameHolder.transform);
+                    totalFrame.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
                     Player2FrameList.Add(totalFrame);
 
                 }
@@ -788,6 +793,7 @@ public class BowlingUIBehaviour : MonoBehaviour
                     GameObject copyFrame = GameObject.Instantiate(normalSetReference);
                     copyFrame.transform.SetParent(player2FrameHolder.transform);
                     copyFrame.GetComponent<BSetData>().DeclareSetCount(index + 1);
+                    copyFrame.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
                     Player2FrameList.Add(copyFrame);
                 }
                 break;

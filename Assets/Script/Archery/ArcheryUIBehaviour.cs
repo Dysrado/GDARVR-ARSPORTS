@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 
 
@@ -19,6 +20,13 @@ public class ArcheryUIBehaviour : MonoBehaviour
     [SerializeField] private ArcheryPlayerData player1Data;
     [SerializeField] private ArcheryPlayerData player2Data;
     [SerializeField] private ClockData clockInfo;
+
+    [Header("Wind Data")]
+    [SerializeField] private Sprite leftArrow;
+    [SerializeField] private Sprite rightArrow;
+    [SerializeField] private Image windImage;
+    [SerializeField] private TextMeshProUGUI windData;
+
 
     [Header("External ReferenceTab")]
     [SerializeField] private GameObject winnerTab;
@@ -90,6 +98,23 @@ public class ArcheryUIBehaviour : MonoBehaviour
     {
         timeInSeconds = seconds;
     }
+
+    //Wind Logic
+    public void UpdateWind(float windVal)
+    {
+        if (windVal < 0)
+        {
+            windImage.sprite = leftArrow;
+        }
+
+        else
+        {
+            windImage.sprite = rightArrow;
+        }
+
+        windData.text = windVal.ToString();
+    }
+
 
     //Player Logic
 

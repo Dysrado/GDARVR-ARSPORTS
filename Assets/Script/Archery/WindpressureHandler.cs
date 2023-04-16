@@ -34,6 +34,7 @@ public class WindpressureHandler : MonoBehaviour
         if (timer <= 0.0f)
         {
             direction = Random.Range(-1,1);
+            ArcheryUIBehaviour.Instance.UpdateWind((float)direction);
             timer = RandomTime();
         }
         else
