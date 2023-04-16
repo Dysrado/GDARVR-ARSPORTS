@@ -1933,7 +1933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  bowlSpeed: 4000
+  bowlSpeed: 2000
   adjustSpeed: 0.2
 --- !u!33 &1401733356377739152
 MeshFilter:
@@ -2343,7 +2343,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -46, y: -563}
+  m_AnchoredPosition: {x: 229, y: -297}
   m_SizeDelta: {x: 146.4314, y: 113.1077}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1401733356820285425
@@ -3258,7 +3258,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 280.56656, y: -563}
+  m_AnchoredPosition: {x: 555.5666, y: -296.99997}
   m_SizeDelta: {x: 146.4314, y: 113.1077}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1401733357215324460
@@ -3804,7 +3804,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 117.16757, y: -563}
+  m_AnchoredPosition: {x: 392.1676, y: -296.99997}
   m_SizeDelta: {x: 146.4314, y: 113.1077}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1401733357616168395

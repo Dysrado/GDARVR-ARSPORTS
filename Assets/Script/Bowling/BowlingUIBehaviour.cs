@@ -155,34 +155,37 @@ public class BowlingUIBehaviour : MonoBehaviour
         }
 
         // Player 1 - Strikes
-        List<int> next2Values = new List<int>();
         if (P1CumulativeScore[12] == 10)
         {
+            List<int> next2Values = new List<int>();
             next2Values = CheckNext2ValueIndexesForStrike(P1CumulativeScore, 14);
             P1CumulativeScore[14] = P1CumulativeScore[11] + P1CumulativeScore[8] + P1CumulativeScore[5] + P1CumulativeScore[2] + P1CumulativeScore[12] + P1CumulativeScore[next2Values[0]] + P1CumulativeScore[next2Values[1]];
             Player1FrameList[4].GetComponent<BSetData>().UpdateCumultativeScore(P1CumulativeScore[14].ToString());
         }
-        if (P1CumulativeScore[9] == 10)
+        else if (P1CumulativeScore[9] == 10)
         {
+            List<int> next2Values = new List<int>();
             next2Values = CheckNext2ValueIndexesForStrike(P1CumulativeScore, 11);
             P1CumulativeScore[11] = P1CumulativeScore[8] + P1CumulativeScore[5] + P1CumulativeScore[2] + P1CumulativeScore[9] + P1CumulativeScore[next2Values[0]] + P1CumulativeScore[next2Values[1]];
             Player1FrameList[3].GetComponent<BSetData>().UpdateCumultativeScore(P1CumulativeScore[11].ToString());
         }
-        if (P1CumulativeScore[6] == 10)
+        else if(P1CumulativeScore[6] == 10)
         {
+            List<int> next2Values = new List<int>();
             next2Values = CheckNext2ValueIndexesForStrike(P1CumulativeScore, 8);
             P1CumulativeScore[8] = P1CumulativeScore[5] + P1CumulativeScore[2] + P1CumulativeScore[6] + P1CumulativeScore[next2Values[0]] + P1CumulativeScore[next2Values[1]];
             Player1FrameList[2].GetComponent<BSetData>().UpdateCumultativeScore(P1CumulativeScore[8].ToString());
         }
-        if (P1CumulativeScore[3] == 10)
+        else if(P1CumulativeScore[3] == 10)
         {
+            List<int> next2Values = new List<int>();
             next2Values = CheckNext2ValueIndexesForStrike(P1CumulativeScore, 5);
             P1CumulativeScore[5] = P1CumulativeScore[2] + P1CumulativeScore[3] + P1CumulativeScore[next2Values[0]] + P1CumulativeScore[next2Values[1]];
             Player1FrameList[1].GetComponent<BSetData>().UpdateCumultativeScore(P1CumulativeScore[5].ToString());
         }
-
-        if (P1CumulativeScore[0] == 10)
+        else if(P1CumulativeScore[0] == 10)
         {
+            List<int> next2Values = new List<int>();
             next2Values = CheckNext2ValueIndexesForStrike(P1CumulativeScore, 2);
             Debug.Log("Value 1: " + next2Values[0] + ", Value 2: " + next2Values[1]);
             P1CumulativeScore[2] = P1CumulativeScore[0] + P1CumulativeScore[next2Values[0]] + P1CumulativeScore[next2Values[1]];
