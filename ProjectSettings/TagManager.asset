@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Arrow
+  - Target
+  - Ground
+  - Floor
+  - BowlingBall
+  - BowlingBallSpawnPoint
   layers:
   - Default
   - TransparentFX
