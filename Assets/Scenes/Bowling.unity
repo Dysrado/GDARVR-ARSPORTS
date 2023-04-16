@@ -2628,6 +2628,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BowlingMinigamePrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6882282046249333532, guid: ae9464668a4b5924282c11d8d31b68c4, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6882282047420714215, guid: ae9464668a4b5924282c11d8d31b68c4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7527208717300052590, guid: ae9464668a4b5924282c11d8d31b68c4, type: 3}
       propertyPath: m_RootOrder
       value: 5
