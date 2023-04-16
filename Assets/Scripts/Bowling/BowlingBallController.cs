@@ -7,9 +7,14 @@ public class BowlingBallController : MonoBehaviour
     public Rigidbody rb;
     [SerializeField] private float bowlSpeed;
     [SerializeField] private float adjustSpeed;
-    private Vector3 originalPos;
+    public Vector3 originalPos;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        originalPos = gameObject.transform.position;
+    }
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -63,7 +68,7 @@ public class BowlingBallController : MonoBehaviour
     {
         gameObject.transform.position = originalPos;
         gameObject.transform.rotation = Quaternion.identity;
-        rb.position = originalPos;
+        //rb.position = originalPos;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
     }

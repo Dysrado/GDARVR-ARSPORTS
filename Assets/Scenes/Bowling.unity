@@ -1932,9 +1932,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c04c84651ec534b8cefa9010076bcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 1401733356197966802}
   bowlSpeed: 2000
   adjustSpeed: 0.2
+  originalPos: {x: 0, y: 0, z: 0}
 --- !u!33 &1401733356377739152
 MeshFilter:
   m_ObjectHideFlags: 0

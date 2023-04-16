@@ -162,28 +162,28 @@ public class BowlingUIBehaviour : MonoBehaviour
             P1CumulativeScore[14] = P1CumulativeScore[11] + P1CumulativeScore[8] + P1CumulativeScore[5] + P1CumulativeScore[2] + P1CumulativeScore[12] + P1CumulativeScore[next2Values[0]] + P1CumulativeScore[next2Values[1]];
             Player1FrameList[4].GetComponent<BSetData>().UpdateCumultativeScore(P1CumulativeScore[14].ToString());
         }
-        else if (P1CumulativeScore[9] == 10)
+        if (P1CumulativeScore[9] == 10)
         {
             List<int> next2Values = new List<int>();
             next2Values = CheckNext2ValueIndexesForStrike(P1CumulativeScore, 11);
             P1CumulativeScore[11] = P1CumulativeScore[8] + P1CumulativeScore[5] + P1CumulativeScore[2] + P1CumulativeScore[9] + P1CumulativeScore[next2Values[0]] + P1CumulativeScore[next2Values[1]];
             Player1FrameList[3].GetComponent<BSetData>().UpdateCumultativeScore(P1CumulativeScore[11].ToString());
         }
-        else if(P1CumulativeScore[6] == 10)
+        if(P1CumulativeScore[6] == 10)
         {
             List<int> next2Values = new List<int>();
             next2Values = CheckNext2ValueIndexesForStrike(P1CumulativeScore, 8);
             P1CumulativeScore[8] = P1CumulativeScore[5] + P1CumulativeScore[2] + P1CumulativeScore[6] + P1CumulativeScore[next2Values[0]] + P1CumulativeScore[next2Values[1]];
             Player1FrameList[2].GetComponent<BSetData>().UpdateCumultativeScore(P1CumulativeScore[8].ToString());
         }
-        else if(P1CumulativeScore[3] == 10)
+        if(P1CumulativeScore[3] == 10)
         {
             List<int> next2Values = new List<int>();
             next2Values = CheckNext2ValueIndexesForStrike(P1CumulativeScore, 5);
             P1CumulativeScore[5] = P1CumulativeScore[2] + P1CumulativeScore[3] + P1CumulativeScore[next2Values[0]] + P1CumulativeScore[next2Values[1]];
             Player1FrameList[1].GetComponent<BSetData>().UpdateCumultativeScore(P1CumulativeScore[5].ToString());
         }
-        else if(P1CumulativeScore[0] == 10)
+        if(P1CumulativeScore[0] == 10)
         {
             List<int> next2Values = new List<int>();
             next2Values = CheckNext2ValueIndexesForStrike(P1CumulativeScore, 2);
@@ -257,7 +257,7 @@ public class BowlingUIBehaviour : MonoBehaviour
 
         for (int i = startIndex + 1; i < PCumulativeScore.Count; i++)
         {
-            if (PCumulativeScore[i] != 11 || PCumulativeScore[i] != 12)
+            if (PCumulativeScore[i] != 11 && PCumulativeScore[i] != 12)
             {
                 next2Values.Add(i);
                 for (int j = i + 1; j < PCumulativeScore.Count; j++)
