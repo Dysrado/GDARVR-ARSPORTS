@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pin: {fileID: 3502965865471219207}
   isKnockedOver: 0
+  hit1stAttempt: 0
   hitFloor: 0
 --- !u!1 &4349458218619301189
 GameObject:
@@ -121,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pin: {fileID: 3502965866715876311}
   isKnockedOver: 0
+  hit1stAttempt: 0
   hitFloor: 0
 --- !u!1 &4349458219268158217
 GameObject:
@@ -182,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pin: {fileID: 3502965865673192236}
   isKnockedOver: 0
+  hit1stAttempt: 0
   hitFloor: 0
 --- !u!1 &4349458219507619131
 GameObject:
@@ -243,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pin: {fileID: 3502965866123107206}
   isKnockedOver: 0
+  hit1stAttempt: 0
   hitFloor: 0
 --- !u!1 &4349458219560236383
 GameObject:
@@ -270,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 4349458219560236383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4311871505246671213}
@@ -323,6 +327,7 @@ MonoBehaviour:
   knockedPins: 0
   uIManager: {fileID: 0}
   bowlingScoreManager: {fileID: 0}
+  bowlingUIBehaviour: {fileID: 0}
 --- !u!1 &4349458219597675845
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pin: {fileID: 3502965865839639628}
   isKnockedOver: 0
+  hit1stAttempt: 0
   hitFloor: 0
 --- !u!1 &4349458219800744623
 GameObject:
@@ -444,6 +450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pin: {fileID: 3502965865072488711}
   isKnockedOver: 0
+  hit1stAttempt: 0
   hitFloor: 0
 --- !u!1 &4349458219977072073
 GameObject:
@@ -505,6 +512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pin: {fileID: 3502965866663991436}
   isKnockedOver: 0
+  hit1stAttempt: 0
   hitFloor: 0
 --- !u!1 &4349458220011272005
 GameObject:
@@ -566,6 +574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pin: {fileID: 3502965866294160183}
   isKnockedOver: 0
+  hit1stAttempt: 0
   hitFloor: 0
 --- !u!1 &4349458220188332192
 GameObject:
@@ -627,6 +636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pin: {fileID: 3502965865062456803}
   isKnockedOver: 0
+  hit1stAttempt: 0
   hitFloor: 0
 --- !u!1 &4349458220273344988
 GameObject:
@@ -688,6 +698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pin: {fileID: 3502965865596084643}
   isKnockedOver: 0
+  hit1stAttempt: 0
   hitFloor: 0
 --- !u!1001 &4349458218429081053
 PrefabInstance:
